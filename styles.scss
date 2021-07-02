@@ -1,0 +1,49 @@
+// ***************************************************** Reset *****************************************************
+*,:after,:before{box-sizing:border-box}a,b,blockquote,body,canvas,caption,code,div,em,embed,fieldset,figure,footer,form,h1,h2,h3,h4,h5,h6,header,html,i,iframe,img,label,li,main,nav,object,ol,p,pre,section,small,span,strike,strong,sub,sup,table,tbody,td,tfoot,th,thead,tr,tt,u,ul,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;text-size-adjust:none}footer,header,main,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}input{-webkit-appearance:none;border-radius:0}
+// ***************************************************** Reset *****************************************************
+
+html, body {
+  background-color: #323232;
+  color: rgb(250, 250, 250);
+}
+
+@mixin outline {
+  outline: 1px dashed orangered;
+}
+
+main {
+  // !center this properly later
+  @include outline;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto; 
+  height: 960px;
+  width: 80%;
+}
+
+#gridOptions {
+  @include outline;
+  display: inline-block;
+  height: 300px;
+  width: 400px;
+}
+
+#grid {
+  @include outline;
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(16, 1fr);
+  height: 960px;
+  width: 960px;
+
+  .square {
+    display: inline-block;
+    @include outline;
+  }
+}
+
+.square {
+  display: inline-block;
+  @include outline;
+}
