@@ -20,3 +20,7 @@ let SetUpGrid = function(size) {
     gridEl.style.gridTemplateRows = `repeat(${size}, 1fr)`;
   }
 }
+
+let SetUpListners = function(grid) {
+  
+}

@@ -13,7 +13,12 @@
 <body>
   <main>
     <aside id=gridOptions>
-      <div id="clear">Clear Grid</div>
+      <label for="gColor">Pick a Color: #ffffff</label>
+      <input id="gColor" name="gColor" type="color" value="#ffffff">
+      <div id="gErase" class="button">Erase</div>
+      <label for="gSize">Grid Size: 16x16</label>
+      <input id="gSize" name="gSize" type="range" min=16 max=64>
+      <div id="gClear" class="button">Clear Grid</div>
     </aside>
 
     <div id="grid">
