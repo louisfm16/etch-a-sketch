@@ -56,6 +56,21 @@ html, body {
   font-family: 'Source Code Pro', monospace;
 }
 
+header {
+  outline: 1px dashed orangered;
+  position: relative;
+  display: none;
+  height: 100px;
+  width: 100%;
+}
+
+header #title {
+  outline: 1px dashed orangered;
+  display: inline-block;
+  font-size: 68px;
+  margin: auto;
+}
+
 main {
   position: absolute;
   top: 50%;
@@ -155,6 +170,7 @@ main {
   background-color: #3e6775;
   border: 7px solid #305866;
   border-radius: 2px;
+  z-index: -1;
 }
 
 #grid .square {
@@ -164,6 +180,7 @@ main {
 
 .square {
   display: inline-block;
+  z-index: 1;
 }
 
 .square:hover {
@@ -171,7 +188,7 @@ main {
           filter: brightness(1.5);
 }
 
-.square .colored {
+.colored {
   background-color: #dde2e4;
 }
 /*# sourceMappingURL=styles.css.map */
