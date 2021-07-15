@@ -33,7 +33,8 @@ let SetUpGrid = function(size) {
     square.classList.add('square');
     gridEl.appendChild(square);
 
-    square.addEventListener('mouseenter', OnSquareHover, false);
+    square.addEventListener('mouseenter', PaintSquare, false);
+    square.addEventListener('mouseup', PaintSquare, false);
   }
 
   // Change the Flex grid size
@@ -79,8 +80,8 @@ let ClearGrid = function () {
   SetUpGrid(gSize);
 }
 
-let OnSquareHover = function() {
+let PaintSquare = function() {
   if(isDrawing) {
-    this.style.backgroundColor = gColor;
+    this.style.backgroundColor = isErasing ? 'transparent' : gColor;
   }
 }
