@@ -159,3 +159,49 @@ main {
 .colored {
   background-color: #dde2e4;
 }
+
+@media only screen and (max-width: 600px) {
+  header {
+    height: 60px;
+
+    & #title {
+      width: 100%;
+      text-align: center;
+      display: block;
+      font-size: 28px;
+    }
+  }
+
+  main {
+    top: 70px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    flex-wrap: wrap-reverse;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  #gridOptions {
+    display: inline-block;
+    width: 260px;
+    margin: 20px 0;
+    padding: 10px 30px;
+
+    & .button {
+      height: 30px;
+      margin: 15px auto;
+      line-height: 30px;
+      font-size: 16px;
+      padding: 0 10px;
+    }
+
+    & #gSize {
+      width: 190px;
+    }
+  }
+
+  #grid {
+    height: 300px;
+    width: 300px;
+  }
+}

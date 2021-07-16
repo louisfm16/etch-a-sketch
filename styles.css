@@ -235,4 +235,49 @@ main {
 .colored {
   background-color: #dde2e4;
 }
+
+@media only screen and (max-width: 600px) {
+  header {
+    height: 60px;
+  }
+  header #title {
+    width: 100%;
+    text-align: center;
+    display: block;
+    font-size: 28px;
+  }
+  main {
+    top: 70px;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    -ms-flex-wrap: wrap-reverse;
+        flex-wrap: wrap-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  #gridOptions {
+    display: inline-block;
+    width: 260px;
+    margin: 20px 0;
+    padding: 10px 30px;
+  }
+  #gridOptions .button {
+    height: 30px;
+    margin: 15px auto;
+    line-height: 30px;
+    font-size: 16px;
+    padding: 0 10px;
+  }
+  #gridOptions #gSize {
+    width: 190px;
+  }
+  #grid {
+    height: 300px;
+    width: 300px;
+  }
+}
 /*# sourceMappingURL=styles.css.map */
