@@ -5,20 +5,26 @@ window.onload = function () {
 // Elements
 let gridEl;
 let gColorEl;
+let bgColorEl;
 let gEraseEl;
 let gSizeEl;
+let gOutlineEl;
 let gClearEl;
 
 let gColor = '#ffffff';
+let bgColor = '#3e6775';
 let gSize = 16;
 let isErasing = false;
 let isDrawing = false;
+let isOutline = true;
 
 let init = () => {
   gridEl = document.getElementById('grid');
   gColorEl = document.getElementById('gColor');
+  bgColorEl = document.getElementById('bgColor');
   gEraseEl = document.getElementById('gErase');
   gSizeEl = document.getElementById('gSize');
+  gOutlineEl = document.getElementById('gOutline');
   gClearEl = document.getElementById('gClear');
 
   SetUpGrid(gSize);
@@ -33,8 +39,10 @@ let SetUpGrid = function(size) {
     square.classList.add('square');
     gridEl.appendChild(square);
 
-    square.addEventListener('mouseenter', PaintSquare, false);
+    // I know, this is bad, but its using divs instead of canvas
+    // so its allready bad
     square.addEventListener('mouseup', PaintSquare, false);
+    square.addEventListener('mousemove', PaintSquare, false);
   }
 
   // Change the Flex grid size
@@ -44,8 +52,10 @@ let SetUpGrid = function(size) {
 
 let SetUpListeners = function () {
   gColorEl.addEventListener('input', WatchColorPicker, false);
+  bgColorEl.addEventListener('input', WatchBGColorPicker, false);
   gEraseEl.addEventListener('click', ToggleErase, false);
   gSizeEl.addEventListener('input', WatchGridSize, false);
+  gOutlineEl.addEventListener('click', ToggleOutline, false);
   gClearEl.addEventListener('click', ClearGrid, false);
   
   // Fix this, Make it more robust
@@ -57,7 +67,15 @@ let WatchColorPicker = function(e) {
   gColor = e.target.value;
   // Going back to siblings due to the eydropper being hidden
   // Update the label for color
-  gColorEl.previousElementSibling.previousElementSibling.innerText = `Pick a Color: ${gColor}`;
+  gColorEl.previousElementSibling.previousElementSibling.innerText = `Color: ${gColor}`;
+}
+
+let WatchBGColorPicker = function (e) {
+  bgColor = e.target.value;
+  // Going back to siblings due to the eydropper being hidden
+  // Update the label for color
+  bgColorEl.previousElementSibling.previousElementSibling.innerText = `BG Color: ${bgColor}`;
+  gridEl.style.backgroundColor = bgColor;
 }
 
 // Test 'input' performance, if bad use 'change'
@@ -84,4 +102,18 @@ let PaintSquare = function() {
   if(isDrawing) {
     this.style.backgroundColor = isErasing ? 'transparent' : gColor;
   }
+}
+
+let ToggleOutline = function() {
+  isOutline = !isOutline;
+
+  let squares = document.querySelectorAll('.square');
+  
+  isOutline ?
+    squares.forEach(square => {
+      square.classList.remove('no-outline');
+    }) :
+    squares.forEach(square => {
+      square.classList.add('no-outline');
+    });
 }

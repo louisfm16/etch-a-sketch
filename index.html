@@ -14,11 +14,14 @@
   <header><h1 id="title">ETCH-A-SKETCH</h1></header>
   <main>
     <aside id=gridOptions>
-      <label for="gColor">Pick a Color: #ffffff</label>
-      <input id="gColor" name="gColor" type="color" value="#ffffff">
+      <label for="gColor">Color: #ffffff</label>
+      <input id="gColor" class="color-picker" name="gColor" type="color" value="#ffffff">
+      <label for="bgColor">BG Color: #3e6775</label>
+      <input id="bgColor" class="color-picker" name="bgColor" type="color" value="#3e6775">
       <div id="gErase" class="button">Erase</div>
       <label for="gSize">Grid Size: 16x16</label>
       <input id="gSize" name="gSize" type="range" min=16 max=64 value=16>
+      <div id="gOutline" class="button">Toggle Grid</div>
       <div id="gClear" class="button">Clear Grid</div>
     </aside>
 

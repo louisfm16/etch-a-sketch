@@ -57,18 +57,20 @@ html, body {
 }
 
 header {
-  outline: 1px dashed orangered;
   position: relative;
-  display: none;
   height: 100px;
   width: 100%;
+  background-color: #057199;
 }
 
 header #title {
-  outline: 1px dashed orangered;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   display: inline-block;
   font-size: 68px;
-  margin: auto;
 }
 
 main {
@@ -97,6 +99,18 @@ main {
 }
 
 #gridOptions .button {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
   outline: 2px solid #057199;
   background-color: #057199;
   height: 50px;
@@ -112,7 +126,7 @@ main {
   cursor: pointer;
 }
 
-#gridOptions #gColor {
+#gridOptions .color-picker {
   -webkit-appearance: none;
   border: none;
   height: 35px;
@@ -120,11 +134,11 @@ main {
   margin: 20px auto;
 }
 
-#gridOptions #gColor::-webkit-color-swatch-wrapper {
+#gridOptions .color-picker::-webkit-color-swatch-wrapper {
   padding: 0;
 }
 
-#gridOptions #gColor::-webkit-color-swatch {
+#gridOptions .color-picker::-webkit-color-swatch {
   border: none;
 }
 
@@ -158,6 +172,18 @@ main {
 }
 
 #grid {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
   display: -ms-grid;
   display: grid;
   position: relative;
@@ -174,12 +200,30 @@ main {
 }
 
 #grid .square {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
   display: inline-block;
-  outline: 0.01em solid #057199;
+  outline: 0.01em solid rgba(158, 158, 158, 0.5);
+}
+
+.no-outline {
+  outline: none !important;
 }
 
 .square {
   display: inline-block;
+  -webkit-filter: brightness(1.1);
+          filter: brightness(1.1);
   z-index: 1;
 }
 
